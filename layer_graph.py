@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import pandas as pd
 import mxnet as mx
 import onnx
 import glob
@@ -13,7 +14,7 @@ from functools import reduce
 
 class BaseGraph():
     def __init__(self, layers=None, require_append=False):
-        self.graph = nx.DiGraph()#空的有向图
+        self.graph = nx.DiGraph()
         self.first_layer = None
         self.tail_layer = None
         self.output_to_layer = {}
